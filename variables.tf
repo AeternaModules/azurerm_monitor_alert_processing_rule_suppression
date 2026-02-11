@@ -66,7 +66,7 @@ EOT
     resource_group_name = string
     scopes              = list(string)
     description         = optional(string)
-    enabled             = optional(bool, true)
+    enabled             = optional(bool) # Default: true
     tags                = optional(map(string))
     condition = optional(object({
       alert_context = optional(object({
@@ -133,7 +133,7 @@ EOT
           start_time   = optional(string)
         }))
       }))
-      time_zone = optional(string, "UTC")
+      time_zone = optional(string) # Default: "UTC"
     }))
   }))
 }
