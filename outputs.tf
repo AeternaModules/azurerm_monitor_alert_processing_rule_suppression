@@ -1,3 +1,7 @@
+output "monitor_alert_processing_rule_suppressions_id" {
+  description = "Map of id values across all monitor_alert_processing_rule_suppressions, keyed the same as var.monitor_alert_processing_rule_suppressions"
+  value       = { for k, v in azurerm_monitor_alert_processing_rule_suppression.monitor_alert_processing_rule_suppressions : k => v.id }
+}
 output "monitor_alert_processing_rule_suppressions_condition" {
   description = "Map of condition values across all monitor_alert_processing_rule_suppressions, keyed the same as var.monitor_alert_processing_rule_suppressions"
   value       = { for k, v in azurerm_monitor_alert_processing_rule_suppression.monitor_alert_processing_rule_suppressions : k => v.condition }
