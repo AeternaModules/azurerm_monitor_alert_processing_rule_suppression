@@ -118,20 +118,20 @@ EOT
       effective_from  = optional(string)
       effective_until = optional(string)
       recurrence = optional(object({
-        daily = optional(object({
+        daily = optional(list(object({
           end_time   = string
           start_time = string
-        }))
-        monthly = optional(object({
+        })))
+        monthly = optional(list(object({
           days_of_month = list(number)
           end_time      = optional(string)
           start_time    = optional(string)
-        }))
-        weekly = optional(object({
+        })))
+        weekly = optional(list(object({
           days_of_week = list(string)
           end_time     = optional(string)
           start_time   = optional(string)
-        }))
+        })))
       }))
       time_zone = optional(string) # Default: "UTC"
     }))
